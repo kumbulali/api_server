@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+message ProductID{
+    string id = 1;
+}
+
+message Product{
+    string id = 1;
+    string imageURL = 2;
+    string productName = 3;
+    string productDescription = 4;
+    string productReleaseDate = 5;
+    float productPrice = 6;
+}
+
+message Products{
+    repeated Product products = 1;
+}
+
+message Success{
+    bool success = 1;
+}
+
+
+
+service ProductInfo{
+
+    rpc GetProductInfo(ProductID) returns (Product);
+
+    rpc GetAllProductsInfo(Success) returns (Products);
+
+    rpc AddProduct(Product) returns (Success);
+
+}
