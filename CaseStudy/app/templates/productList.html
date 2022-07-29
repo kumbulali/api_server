@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ürünler</title>
+    <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    </style>
+</head>
+<body>
+<h2>Ürün Listesi</h2>
+<input style="float:left;"type="button" onclick="location.href = '/product-add';" value="Yeni Ürün Ekle"/>
+<input style="float:right;" onclick="location.href = '/product';" type="submit" value="Ürün Sorgula"/>
+
+
+
+<table>
+    <tr>
+        <th>Ürün Resmi</th>
+        <th>Ürün ID'si</th>
+        <th>Ürün Adı</th>
+        <th>Ürün Açıklaması</th>
+        <th>Ürün Çıkış Tarihi</th>
+        <th>Ürün Fiyatı</th>
+    </tr>
+    {% for product in productList %}
+    <tr>
+        <td><img src="{{ product['imageURL'] }}" width="120" height="120"></td>
+        <td>{{ product['id'] }}</td>
+        <td>{{ product['productName'] }}</td>
+        <td>{{ product['productDescription'] }}</td>
+        <td>{{ product['productReleaseDate'] }}</td>
+        <td>{{ "%.2f"|format(product['productPrice']) }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>

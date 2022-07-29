@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ürün Ekle</title>
+</head>
+<body>
+<form action="{{ AddProduct }}" method="POST">
+    <p>Ürün ID: <input type="text" name="productID" placeholder="Ürün İsmini Giriniz."/></p>
+    <p>Ürün İsmi: <input type="text" name="productName" placeholder="Ürün İsmini Giriniz."/></p>
+    <p>Ürün Açıklaması: <input type="text" name="productDescription" placeholder="Ürün Açıklamasını Giriniz."/></p>
+    <p>Ürün Görseli URL: <input type="text" name="productImageURL" placeholder="Ürün Görsel Linkini Giriniz."/></p>
+    <p>Ürün Çıkış Ayı: <input type="month" name="productReleaseDate" placeholder="Ürün Çıkış Tarihini Giriniz."/></p>
+    <p>Ürün Fiyatı: <input type="text" name="productPrice" placeholder="Ürün Fiyatını Giriniz."/></p>
+    <input type="submit" value="Gönder"/>
+</form>
+<br>
+<input type="button" onclick="location.href = '/';" value="Listeye Dön"/>
+<p1 style="display: {{ display }}; color: rgb(51, 204, 51);">Ürün Eklendi</p1>
+</body>
+</html>
